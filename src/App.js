@@ -8,6 +8,7 @@ import AddFavorites from './components/AddToFavorites';
 
 
 const App = () => {
+	document.body.style = 'background: #1e1e2f;';
 	const [movies, setMovies] = useState([]);
   	const [searchValue, setSearchValue] = useState('');
   	const [favorites, setFavorites] = useState([]);
@@ -34,13 +35,19 @@ const App = () => {
 	}, [searchValue]);
 
 	return (
-		<div className='container-fluid movie-app'>
+		<div className='container-fluid movie-app text-white'>
       <div className='row d-flex align-items-center mt-4 mb-4'>
 				<MovieListHeading heading='Movies' />
 				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 			</div>
 			<div className='row'>
 				<MovieList movies={movies} favoriteComponent={AddFavorites} handleFavoritesClick={addFavoriteMovie}/>
+			</div>
+			<div className='row d-flex align-items-center mt-4 mb-4'>
+				<MovieListHeading heading='Favorites'/>
+			</div>
+			<div className='row'>
+				<MovieList movies={favorites} favoriteComponent={AddFavorites}/>
 			</div>
 		</div>
 	);
