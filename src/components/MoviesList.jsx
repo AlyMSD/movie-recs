@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDBCard, MDBCardTitle, MDBCardText, MDBCardOverlay, MDBCardImage } from 'mdb-react-ui-kit';
 
 
 const MovieList = (props) => {
